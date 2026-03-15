@@ -13,17 +13,52 @@
 ════════════════════════════════ */
 @media (max-width: 1024px) {
 
-  /* Navbar */
+  /* Navbar — esconde links e mostra hamburguer */
+  .nav-links,
+  .nav-actions {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    color: var(--text);
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: all 0.3s;
+  }
+
+  /* Navbar branca no tablet sempre */
+  #navbar {
+    background: rgba(250,250,248,0.97) !important;
+    border-bottom: 1px solid var(--border);
+  }
+
   .nav-inner {
     padding: 0 24px;
   }
 
-  .nav-links {
-    gap: 24px;
+  /* Logo centralizada */
+  .nav-logo {
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+    margin: 0 auto;
   }
 
-  .nav-links a {
-    font-size: 10px;
+  /* Menu mobile */
+  .nav-mobile {
+    top: 70px;
   }
 
   /* Galeria home */
@@ -105,13 +140,11 @@
     padding: 0 20px;
   }
 
-  /* Esconde links e ações */
   .nav-links,
   .nav-actions {
-    display: none;
+    display: none !important;
   }
 
-  /* Logo centralizada */
   .nav-logo {
     opacity: 1 !important;
     position: static;
@@ -123,15 +156,15 @@
     height: 32px;
   }
 
-  /* Menu hamburguer */
   .menu-toggle {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
     background: none;
     border: none;
     padding: 4px;
+    color: var(--text);
   }
 
   .menu-toggle span {
@@ -142,14 +175,9 @@
     transition: all 0.3s;
   }
 
-  /* Navbar branca no mobile sempre */
   #navbar {
     background: rgba(250,250,248,0.97) !important;
     border-bottom: 1px solid var(--border);
-  }
-
-  .menu-toggle {
-    color: var(--text);
   }
 
   /* Menu mobile aberto */
@@ -387,7 +415,6 @@
 ════════════════════════════════ */
 @media (max-width: 480px) {
 
-  /* Galeria — 1 coluna */
   .galeria-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: 240px;
@@ -397,7 +424,6 @@
     grid-column: span 1;
   }
 
-  /* Fotos projeto — 1 coluna */
   .fotos-grid-6 {
     grid-template-columns: 1fr;
   }
@@ -406,19 +432,16 @@
     height: 220px;
   }
 
-  /* Stats em coluna */
   .stats {
     flex-direction: column;
     align-items: center;
     gap: 28px;
   }
 
-  /* Diferenciais — 1 coluna */
   .diferenciais {
     grid-template-columns: 1fr;
   }
 
-  /* Contato desc menor */
   .contato-desc {
     font-size: 14px;
   }
