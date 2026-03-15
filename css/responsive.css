@@ -145,15 +145,45 @@
     display: none !important;
   }
 
+  /* Navbar mobile: logo esquerda | whatsapp centro | hamburguer direita */
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
   .nav-logo {
     opacity: 1 !important;
     position: static;
     transform: none;
-    margin: 0 auto;
+    margin: 0;
+    flex: 0 0 auto;
   }
 
   .nav-logo-img {
     height: 32px;
+  }
+
+  /* Botão WhatsApp mobile — visível só no mobile */
+.nav-whatsapp-mobile {
+  display: flex !important;
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  padding: 5px 10px;
+  border: 1px solid rgba(0,0,0,0.4);
+  color: var(--text);
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+  .nav-whatsapp-mobile:hover {
+    background: var(--text);
+    color: white;
   }
 
   .menu-toggle {
@@ -165,6 +195,7 @@
     border: none;
     padding: 4px;
     color: var(--text);
+    flex: 0 0 auto;
   }
 
   .menu-toggle span {

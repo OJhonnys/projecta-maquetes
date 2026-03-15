@@ -293,3 +293,6 @@ footer {
 footer p {
   font-size: 10px; letter-spacing: 0.25em; color: #2d2d2d;
 }
+
+/* Botão WhatsApp mobile — escondido por padrão, visível só no mobile */
+.nav-whatsapp-mobile { display: none; }
