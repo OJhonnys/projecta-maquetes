@@ -1,0 +1,207 @@
+/* ── projeto.css ──
+   Estilos exclusivos da página de projeto individual.
+*/
+
+/* ── PROJETO HEADER ── */
+.projeto-header {
+  padding: 120px 40px 60px;
+  border-bottom: 1px solid var(--border);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.back-link {
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--text); }
+
+.projeto-titulo {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.projeto-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.tag-dot {
+  color: var(--border);
+  font-size: 14px;
+}
+
+.projeto-desc {
+  font-family: var(--font);
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: 1.85;
+  color: #666;
+  max-width: 680px;
+}
+
+/* ── FOTO PRINCIPAL ── */
+.foto-principal {
+    width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: clamp(340px, 55vw, 620px);
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+.foto-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── GRID 6 FOTOS ── */
+.fotos-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px 40px 80px;
+}
+
+.fotos-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.foto-item {
+  height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  background: #f0f0ee;
+}
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foto-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.3s ease;
+}
+
+.foto-item:hover img { transform: scale(1.04); }
+.foto-item:hover::after { background: rgba(0,0,0,0.2); }
+
+/* ── CARROSSEL OVERLAY ── */
+.carrossel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-overlay.ativo {
+  display: flex;
+}
+
+.carrossel-img-wrap {
+  max-width: 85vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-img-wrap img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Botão fechar */
+.carrossel-fechar {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 22px;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: color 0.2s;
+  z-index: 1000;
+  line-height: 1;
+}
+.carrossel-fechar:hover { color: white; }
+
+/* Setas */
+.carrossel-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 1000;
+}
+.carrossel-seta:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.7);
+}
+.carrossel-seta--prev { left: 32px; }
+.carrossel-seta--next { right: 32px; }
+
+/* Contador */
+.carrossel-contador {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── OUTROS PROJETOS ── */
+.todos-projetos-label {
+  text-align: center;
+  padding: 80px 40px 0;
+  border-top: 1px solid var(--border);
+}

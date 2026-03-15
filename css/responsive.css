@@ -1,0 +1,429 @@
+/* ── responsive.css ──
+   Media queries para tablet e celular.
+   Importar DEPOIS do style.css em todas as páginas.
+   
+   Breakpoints:
+   - Tablet: max-width 1024px
+   - Mobile: max-width 768px
+   - Mobile pequeno: max-width 480px
+*/
+
+/* ════════════════════════════════
+   TABLET (até 1024px)
+════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  /* Navbar */
+  .nav-inner {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  /* Galeria home */
+  #galeria {
+    padding: 60px 24px 80px;
+  }
+
+  .project-row h2 {
+    font-size: clamp(20px, 3.5vw, 40px);
+  }
+
+  /* Sobre */
+  #sobre {
+    padding: 80px 24px;
+  }
+
+  .stats {
+    gap: 48px;
+  }
+
+  /* Contato */
+  #contato {
+    padding: 80px 24px;
+  }
+
+  .contact-items {
+    gap: 48px;
+  }
+
+  /* Página galeria */
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+  }
+
+  .card--large {
+    grid-column: span 2;
+  }
+
+  /* Página projeto */
+  .fotos-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projeto-header {
+    padding: 100px 24px 48px;
+  }
+
+  .foto-principal {
+    padding: 0 24px;
+  }
+
+  .fotos-section {
+    padding: 16px 24px 60px;
+  }
+
+  /* Sobre page */
+  .historia-inner {
+    gap: 48px;
+  }
+
+  .diferenciais {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* ════════════════════════════════
+   MOBILE (até 768px)
+════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAVBAR ── */
+  #navbar {
+    height: 60px;
+  }
+
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  /* Esconde links e ações */
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  /* Logo centralizada */
+  .nav-logo {
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .nav-logo-img {
+    height: 32px;
+  }
+
+  /* Menu hamburguer */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: all 0.3s;
+  }
+
+  /* Navbar branca no mobile sempre */
+  #navbar {
+    background: rgba(250,250,248,0.97) !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .menu-toggle {
+    color: var(--text);
+  }
+
+  /* Menu mobile aberto */
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0; right: 0;
+    background: rgba(250,250,248,0.98);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 20px;
+    z-index: 99;
+    flex-direction: column;
+    gap: 0;
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-mobile.aberto {
+    display: flex;
+  }
+
+  .nav-mobile a {
+    font-family: var(--font);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    transition: opacity 0.2s;
+  }
+
+  .nav-mobile a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-mobile a:hover {
+    opacity: 0.5;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    max-height: 420px;
+  }
+
+  .hero-logo {
+    width: clamp(80px, 18vw, 140px);
+  }
+
+  /* ── GALERIA HOME ── */
+  #galeria {
+    padding: 48px 20px 64px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .project-row {
+    padding: 20px 0;
+  }
+
+  .project-row:hover {
+    padding: 32px 0;
+  }
+
+  .project-row h2 {
+    font-size: clamp(18px, 6vw, 32px);
+  }
+
+  .project-row span {
+    font-size: 9px;
+  }
+
+  /* ── SOBRE HOME ── */
+  #sobre {
+    padding: 64px 20px;
+  }
+
+  .sobre-text {
+    font-size: 15px;
+  }
+
+  .stats {
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat {
+    min-width: 80px;
+  }
+
+  /* ── CONTATO HOME ── */
+  #contato {
+    padding: 64px 20px;
+  }
+
+  .contact-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .contato-desc {
+    font-size: 15px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px 20px;
+  }
+
+  /* ── PÁGINA GALERIA ── */
+  .page-hero {
+    padding: 100px 20px 56px;
+  }
+
+  .galeria-grid-section {
+    padding: 48px 20px 64px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+    gap: 10px;
+  }
+
+  .card--large {
+    grid-column: span 2;
+  }
+
+  /* ── PÁGINA PROJETO ── */
+  .projeto-header {
+    padding: 88px 20px 40px;
+  }
+
+  .projeto-titulo {
+    font-size: clamp(24px, 7vw, 42px);
+  }
+
+  .projeto-desc {
+    font-size: 14px;
+  }
+
+  .foto-principal {
+    padding: 0;
+    height: 260px;
+  }
+
+  .fotos-section {
+    padding: 10px 20px 48px;
+  }
+
+  .fotos-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .foto-item {
+    height: 180px;
+  }
+
+  .todos-projetos-label {
+    padding: 56px 20px 0;
+  }
+
+  .galeria-grid-section--compact {
+    padding-top: 40px;
+  }
+
+  /* Carrossel */
+  .carrossel-seta--prev { left: 12px; }
+  .carrossel-seta--next { right: 12px; }
+
+  .carrossel-seta {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ── PÁGINA SOBRE ── */
+  .historia-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .historia-image img {
+    height: 300px;
+  }
+
+  .historia-text .section-header {
+    text-align: center;
+  }
+
+  .historia-text .section-divider {
+    margin: 14px auto 0;
+  }
+
+  .diferenciais {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .steps {
+    gap: 0;
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 12px;
+    padding: 32px 0;
+  }
+
+  .step-number {
+    font-size: 32px;
+  }
+
+  .cta {
+    padding: 56px 20px;
+  }
+
+  .stats-section {
+    padding: 56px 20px;
+  }
+
+  .stats-section .stats {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ════════════════════════════════
+   MOBILE PEQUENO (até 480px)
+════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* Galeria — 1 coluna */
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
+  }
+
+  .card--large {
+    grid-column: span 1;
+  }
+
+  /* Fotos projeto — 1 coluna */
+  .fotos-grid-6 {
+    grid-template-columns: 1fr;
+  }
+
+  .foto-item {
+    height: 220px;
+  }
+
+  /* Stats em coluna */
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Diferenciais — 1 coluna */
+  .diferenciais {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contato desc menor */
+  .contato-desc {
+    font-size: 14px;
+  }
+
+  .hero-logo {
+    width: 80px;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto | Projecta Maquetes</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/galeria.css" />
+  <link rel="stylesheet" href="../css/projeto.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="../index.html">HOME</a>
+        <a href="../pages/galeria.html" class="active">GALERIA</a>
+        <a href="../pages/sobre.html">SOBRE</a>
+        <a href="../index.html#contato">CONTATO</a>
+      </div>
+      <div class="nav-logo" style="opacity:1;">
+        <img src="../assets/images/projecta-logo-black.png" alt="Projecta Maquetes" class="nav-logo-img" />
+      </div>
+      <div class="nav-actions">
+        <a href="https://wa.me/5541996614750?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="whatsapp-btn">WHATSAPP</a>
+        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── PROJETO HEADER ── -->
+  <section class="projeto-header">
+    <div class="projeto-header-inner">
+      <a href="galeria.html" class="back-link">← GALERIA</a>
+      <h1 class="projeto-titulo" id="projeto-titulo"></h1>
+      <div class="projeto-tags">
+        <span class="tag" id="projeto-tipo"></span>
+        <span class="tag-dot">·</span>
+        <span class="tag" id="projeto-escala"></span>
+        <span class="tag-dot">·</span>
+        <span class="tag" id="projeto-ano"></span>
+      </div>
+      <p class="projeto-desc" id="projeto-desc"></p>
+    </div>
+  </section>
+
+  <!-- ── FOTO PRINCIPAL ── -->
+  <section class="foto-principal">
+    <img id="foto-principal" src="" alt="" />
+  </section>
+
+  <!-- ── GRID 6 FOTOS ── -->
+  <section class="fotos-section">
+    <div class="fotos-grid-6" id="fotos-grid"></div>
+  </section>
+
+  <!-- ── CARROSSEL OVERLAY ── -->
+  <div class="carrossel-overlay" id="carrossel" onclick="fecharCarrossel(event)">
+    <button class="carrossel-fechar" onclick="fecharCarrosselBtn()">✕</button>
+    <button class="carrossel-seta carrossel-seta--prev" onclick="mudarFoto(-1); event.stopPropagation()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="carrossel-img-wrap" onclick="event.stopPropagation()">
+      <img id="carrossel-img" src="" alt="" />
+    </div>
+    <button class="carrossel-seta carrossel-seta--next" onclick="mudarFoto(1); event.stopPropagation()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="carrossel-contador" id="carrossel-contador">1 / 6</div>
+  </div>
+
+  <!-- ── OUTROS PROJETOS ── -->
+  <div class="todos-projetos-label">
+    <span class="section-title">OUTROS PROJETOS</span>
+    <div class="section-divider"></div>
+  </div>
+
+  <section class="galeria-grid-section galeria-grid-section--compact">
+    <div class="galeria-grid" id="outros-projetos-grid"></div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2026 PROJECTA MAQUETES. TODOS OS DIREITOS RESERVADOS.</p>
+  </footer>
+
+  <script src="../js/projeto.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* ── sobre.css ──
+   Estilos exclusivos da página Sobre.
+   O style.css principal já é importado antes.
+*/
+
+/* Navbar sempre branca nessa página */
+#navbar {
+  background: rgba(250,250,248,0.97);
+  border-bottom: 1px solid var(--border);
+}
+
+#navbar .nav-links a { color: var(--text); }
+#navbar .whatsapp-btn { border-color: rgba(0,0,0,0.5); color: var(--text); }
+#navbar .social-icon { color: var(--text); }
+
+.nav-links a.active {
+  opacity: 0.4;
+}
+
+/* ── HERO DA PÁGINA ── */
+.page-hero {
+  padding: 160px 40px 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  font-weight: 500;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.page-hero-title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+/* ── HISTÓRIA ── */
+.historia {
+  padding: 100px 40px;
+}
+
+.historia-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.historia-text .section-header {
+  margin-bottom: 40px;
+}
+
+.historia-text p {
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: 1.85;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.historia-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
+/* ── STATS ── */
+.stats-section {
+  background: var(--bg-alt);
+  padding: 80px 40px;
+}
+
+.diferenciais {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+
+.diferencial {
+  text-align: center;
+}
+
+.diferencial-icon {
+  width: 52px; height: 52px;
+  border: none;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.diferencial-icon svg {
+  width: 32px; height: 32px;
+}
+
+.diferencial h3 {
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.diferencial p {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #777;
+}
+
+/* ── CTA ── */
+.cta {
+  background: var(--text);
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-text {
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: white;
+  margin-bottom: 36px;
+}
+
+.cta-btn {
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  padding: 14px 36px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  background: white;
+  color: var(--text);
+}

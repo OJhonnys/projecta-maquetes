@@ -1,6 +1,6 @@
 /* ── VARIÁVEIS ── */
 :root {
-  --font: 'Cormorant Garamond', Georgia, serif;
+  --font: "Libre Baskerville", serif;
   --bg: #fafaf8;
   --bg-alt: #f2f2f0;
   --text: #1a1a1a;
@@ -60,6 +60,11 @@ body {
   transition: opacity 0.2s, color 0.5s;
 }
 
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--text) !important;
+}
+
 #navbar.scrolled .nav-links a { color: var(--text); }
 .nav-links a:hover { opacity: 0.45; }
 
@@ -110,6 +115,20 @@ body {
 }
 #navbar.scrolled .social-icon { color: var(--text); }
 .social-icon:hover { opacity: 0.4; }
+
+.social-icon:hover {
+  opacity: 1;
+  color: var(--text) !important;
+} 
+
+/* - MOBILE - */
+.nav-mobile {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
 
 /* ── HERO ── */
 #hero {
@@ -166,6 +185,12 @@ body {
 .project-row:first-child { border-top: 1px solid var(--border); }
 
 /* Imagem de hover via CSS puro com custom property */
+
+a.project-row {
+  text-decoration: none;
+  display: flex;
+}
+
 .project-row::before {
   content: '';
   position: absolute; inset: 0;
@@ -180,8 +205,8 @@ body {
 .project-row:hover { padding: 44px 0; }
 
 .project-row h2 {
-  font-size: clamp(26px, 4.2vw, 56px);
-  font-weight: 300; letter-spacing: 0.12em; color: var(--text);
+  font-size: clamp(18px, 3vw, 38px);
+  font-weight: 100; letter-spacing: 0.12em; color: var(--text);
   transition: color 0.3s; position: relative; z-index: 2;
 }
 .project-row span {
@@ -211,7 +236,7 @@ body {
 }
 .stat { text-align: center; }
 .stat-number {
-  font-size: clamp(36px, 5vw, 52px);
+  font-size: clamp(25px, 3.5vw, 36px);
   font-weight: 300; letter-spacing: 0.05em; color: var(--text);
 }
 .stat-label {
@@ -228,15 +253,32 @@ body {
 .contact-items {
   display: flex; justify-content: center; gap: 80px;
 }
-.contact-item { text-align: center; }
-.contact-icon {
-  width: 52px; height: 52px;
-  border: 1px solid rgba(0,0,0,0.25);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 14px; cursor: pointer; transition: all 0.25s;
+.contact-item { 
+  text-align: center;
+  color: var(--text);
+  text-decoration: none; 
 }
-.contact-icon:hover { background: var(--text); border-color: var(--text); }
-.contact-icon:hover svg { stroke: white; }
+
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.contact-icon svg {
+  width: 32px;
+  height: 32px;
+  transition: stroke 0.25s, transform 0.25s;
+}
+.contact-icon:hover svg {
+  stroke: var(--text);
+  transform: scale(1.2);
+}
 .contact-label {
   font-size: 10px; letter-spacing: 0.25em;
   font-weight: 500; color: #999; margin-bottom: 8px;
@@ -249,5 +291,5 @@ footer {
   padding: 32px 40px; text-align: center;
 }
 footer p {
-  font-size: 10px; letter-spacing: 0.25em; color: #bbb;
+  font-size: 10px; letter-spacing: 0.25em; color: #2d2d2d;
 }

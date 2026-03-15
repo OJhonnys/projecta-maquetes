@@ -1,0 +1,280 @@
+/* ── galeria.css ──
+   Estilos da página Galeria e página de Projeto individual.
+*/
+
+/* Navbar sempre branca */
+#navbar {
+  background: rgba(250,250,248,0.97);
+  border-bottom: 1px solid var(--border);
+}
+#navbar .nav-links a { color: var(--text); }
+#navbar .whatsapp-btn { border-color: rgba(0,0,0,0.5); color: var(--text); }
+#navbar .social-icon { color: var(--text); }
+.nav-links a.active { opacity: 0.4; }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  padding: 160px 40px 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  font-weight: 500;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 20px;
+}
+.page-hero-title {
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+/* ── GRADE MISTO ── */
+.galeria-grid-section {
+  padding: 80px 40px 100px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.galeria-grid-section--compact {
+  padding-top: 60px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card--large {
+  grid-column: unset;
+}
+
+.card-img {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-img img {
+  transform: scale(1.04);
+}
+
+.card-info {
+  position: static;
+  transform: none;
+  background: transparent;
+  border: none;
+  padding: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-title {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.card-year {
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Card normal */
+.card {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  background: #f0f0ee;
+  cursor: pointer;
+}
+
+/* Card grande ocupa 2 colunas */
+.card--large {
+  grid-column: span 2;
+}
+
+/* Imagem */
+.card-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(10%);
+}
+
+.card:hover .card-img img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.4s ease;
+}
+
+.card:hover .card-img::after {
+  background: rgba(0,0,0,0.25);
+}
+
+/* Polaroid info embaixo */
+.card-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  padding: 14px 18px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.card:hover .card-info {
+  transform: translateY(0);
+}
+
+.card-title {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+
+.card-year {
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ── PROJETO HEADER ── */
+.projeto-header {
+  padding: 120px 40px 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.projeto-header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.back-link {
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--text); }
+
+.projeto-titulo {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.projeto-info {
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--muted);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.dot { opacity: 0.4; }
+
+/* ── FOTOS DO PROJETO ── */
+.projeto-fotos {
+  padding: 60px 40px 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 420px;
+  gap: 12px;
+}
+
+.foto {
+  overflow: hidden;
+  background: #f0f0ee;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foto:hover img { transform: scale(1.03); }
+
+/* Foto que ocupa largura toda */
+.foto--full {
+  grid-column: span 2;
+  grid-row: span 1;
+  height: 560px;
+}
+
+/* Foto wide (2 colunas mas menor) */
+.foto--wide {
+  grid-column: span 2;
+}
+
+/* ── OUTROS PROJETOS LABEL ── */
+.todos-projetos-label {
+  text-align: center;
+  padding: 80px 40px 0;
+  border-top: 1px solid var(--border);
+}

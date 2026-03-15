@@ -1,15 +1,33 @@
 // ── script.js ──
-// Só faz uma coisa: muda a navbar quando o usuário rola a página.
 
+// ── Navbar scroll ──
 const navbar = document.getElementById('navbar');
 const hero   = document.getElementById('hero');
 
-window.addEventListener('scroll', () => {
-  const heroHeight = hero.offsetHeight;
+if (hero) {
+  window.addEventListener('scroll', () => {
+    const heroHeight = hero.offsetHeight;
+    if (window.scrollY > heroHeight - 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+}
 
-  if (window.scrollY > heroHeight - 80) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
+// ── Menu mobile ──
+const menuToggle = document.getElementById('menu-toggle');
+const navMobile  = document.getElementById('nav-mobile');
+
+if (menuToggle && navMobile) {
+  menuToggle.addEventListener('click', () => {
+    navMobile.classList.toggle('aberto');
+  });
+
+  // Fecha ao clicar em um link
+  navMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMobile.classList.remove('aberto');
+    });
+  });
+}
